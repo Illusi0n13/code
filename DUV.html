@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Gallery - DUV School</title>
+    <!-- Font Awesome for social media icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style> 
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+/* Header Section */
+
+
+
+
+
+header {
+    background-color: #1a2c60;
+    padding: 20px 0;
+    color: white;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.contact-info p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.contact-info a {
+    color: white;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.social-icons a {
+    margin-left: 20px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.social-icons a:hover {
+    color: #ddd;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('https://i.ibb.co/gF1x1sX/dav-5.jpg'); /* Background image from provided URL */
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.transparent-logo {
+    width: 150px;
+    opacity: 0.6; /* Transparent effect */
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}
+.gallery {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #1a2c60;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery-container figure {
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%; /* Makes the images square */
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gallery-img:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.gallery-container figure:target {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  background-color: rgba(0, 0)}
+
+/* Add styles for About Section */
+.about {
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1a2c60;
+}
+
+.about p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+.about {
+  padding: 50px 20px;
+  background-color: #000; /* Add this line to change the background color to black */
+  text-align: center;
+  color: #fff; /* Add this line to change the text color to white */
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #fff; /* Add this line to change the heading color to white */
+}
+
+.about p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #fff; /* Add this line to change the paragraph color to white */
+}
+.gallery-container figure:target {
+  position: fixed;
+  top: 50%; /* vertically center the popup */
+  left: 50%; /* horizontally center the popup */
+  transform: translate(-50%, -50%);
+  width: 80%; /* set the width to 80% of the screen */
+  height: 80vh; /* set the height to 80% of the screen height */
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8); /* dark background with 80% opacity */
+  padding: 20px; /* add some padding around the image */
+  box-sizing: border-box; /* include padding in the width and height */
+}
+
+.gallery-container figure:target img {
+  width: 100%; /* make the image take up the full width of the popup */
+  height: 100%; /* make the image take up the full height of the popup */
+  object-fit: contain; /* scale the image to fit within the popup */
+}
+.gallery-container figure:target {
+  position: fixed;
+  top: 50%; /* vertically center the popup */
+  left: 50%; /* horizontally center the popup */
+  transform: translate(-50%, -50%);
+  width: 80%; /* set the width to 80% of the screen */
+  height: 80vh; /* set the height to 80% of the screen height */
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.8); /* dark background with 80% opacity */
+  padding: 20px; /* add some padding around the image */
+  box-sizing: border-box; /* include padding in the width and height */
+}
+
+.gallery-container figure:target img {
+  width: 100%; /* make the image take up the full width of the popup */
+  height: 100%; /* make the image take up the full height of the popup */
+  object-fit: contain; /* scale the image to fit within the popup */
+}
+
+.close-popup-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.close-popup-btn:hover {
+  color: #ccc;
+}
+.gallery {
+  padding: 50px 20px;
+  background-color: #f9f9f9; /* light gray background */
+  background-image: linear-gradient(to bottom, #f9f9f9, #e5e5e5); /* gradient effect */
+  background-size: 100% 300px; /* gradient size */
+  background-position: 0% 100%; /* gradient position */
+  text-align: center;
+}
+
+.gallery h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #1a2c60; /* dark blue color */
+  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* text shadow effect */
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.5); /* semi-transparent white background */
+  border-radius: 10px; /* rounded corners */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); /* box shadow effect */
+  padding: 20px; /* padding around the gallery */
+}
+</style>
+
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        
+        <div class="container header-container">
+            <div class="logo">
+                <img src="duv.1.png" alt="DUV School"> 
+            </div>
+            <div class="contact-info">
+                <p>Email:  <a href="mailto:duvinternationalschool@gmail.com">duvinternationalschool@gmail.com</a></p>
+                <p>Call Us: +91 9891180055</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/p/DUV-International-school-100065049139650/"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="duv.1.png" class="transparent-logo" alt="DUV School"> 
+            <h1>Gallery</h1>
+            <p>Explore the Moments at DUV School</p>
+        </div>
+            </section>
+            <!-- Gallery Section -->
+        <!-- Gallery Section -->
+<section class="gallery">
+    <h2>Our School Moments</h2>
+    <div class="gallery-container">
+     
+      <!-- Image 1 -->
+      <figure id="img1">
+        <a href="#img1">
+          <img src="dit.1.jpg" alt="Gallery Image 1" class="gallery-img">
+        </a>
+        <a href="#img2" class="next">&#10095;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+  
+      <!-- Image 2 -->
+      <figure id="img2">
+        <a href="#img2">
+          <img src="duv.2.jpg" alt="Gallery Image 2" class="gallery-img">
+        </a>
+        <a href="#img1" class="prev">&#10094;</a>
+        <a href="#img3" class="next">&#10095;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+  
+      <!-- Image 3 -->
+      <figure id="img3">
+        <a href="#img3">
+          <img src="duv.3.jpg" alt="Gallery Image 3" class="gallery-img">
+        </a>
+        <a href="#img2" class="prev">&#10094;</a>
+        <a href="#img4" class="next">&#10095;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+  
+      <!-- Image 4 -->
+      <figure id="img4">
+        <a href="#img4">
+          <img src="duv.4.jpg" alt="Gallery Image 4" class="gallery-img">
+        </a>
+        <a href="#img3" class="prev">&#10094;</a>
+        <a href="#img5" class="next">&#10095;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+  
+      <!-- Image 5 -->
+      <figure id="img5">
+        <a href="#img5">
+          <img src="duv.5.jpg" alt="Gallery Image 5" class="gallery-img">
+        </a>
+        <a href="#img4" class="prev">&#10094;</a>
+        <a href="#img6" class="next">&#10095;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+  
+      <!-- Image 6 -->
+      <figure id="img6">
+        <a href="#img6">
+          <img src="duv.6.jpg" alt="Gallery Image 6" class="gallery-img">
+        </a>
+        <a href="#img5" class="prev">&#10094;</a>
+        <a href="#img7" class="next">&#10095;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+  
+      <!-- Image 7 -->
+      <figure id="img7">
+        <a href="#img7">
+          <img src="dit.2.jpg" alt="Gallery Image 7" class="gallery-img">
+        </a>
+        <a href="#img6" class="prev">&#10094;</a>
+        <a href="#img8" class="next">&#10095;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+  
+      <!-- Image 8 -->
+      <figure id="img8">
+        <a href="#img8">
+          <img src="dit.3.jpg" alt="Gallery Image 8" class="gallery-img">
+        </a>
+        <a href="#img7" class="prev">&#10094;</a>
+        <a href="#img9" class="next">&#10095;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+  
+      <!-- Image 9 -->
+      <figure id="img9">
+        <a href="#img9">
+          <img src="dit.4.jpg" alt="Gallery Image 9" class="gallery-img">
+        </a>
+        <a href="#img8" class="prev">&#10094;</a>
+        <a href="#img10" class="next">&#10095;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+  
+      <!-- Image 10 -->
+      <figure id="img10">
+        <a href="#img10">
+          <img src="dit.5.jpg" alt="Gallery Image 10" class="gallery-img">
+        </a>
+        <a href="#img9" class="prev">&#10094;</a>
+        <a href="#img11" class="next">&#10095;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+  
+      <!-- Image 11 -->
+      <figure id="img11">
+        <a href="#img11">
+          <img src="dit.6.jpg" alt="Gallery Image 11" class="gallery-img">
+        </a>
+        <a href="#img10" class="prev">&#10094;</a>
+        <a href="#img12" class="next">&#10095;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+  
+      <!-- Image 12 -->
+      <figure id="img12">
+        <a href="#img12">
+          <img src="dit.7.jpg" alt="Gallery Image 12" class="gallery-img">
+        </a>
+        <a href="#img11" class="prev">&#10094;</a>
+        <a href="#close" class="close-popup"></a>
+      </figure>
+      <a href="#" class="close-popup-btn">&#10006;</a>
+    </div>
+  </section>
+    </div>
+  </section>
+           
+        
+        
+       
+    
+
+<!-- About Section -->
+<section class="about">
+    <h2>About Us</h2>
+    <p>DUV International School, established in 2020, is one of the best and leading educational School in Noida. The school is known for its excellent infrastructure, faculty, innovative teaching methodology, excellent results and a plethora of activities that are conducted throughout the year, which provide a solid foundation for students to become confident scholars and responsible citizens.</p>
+  </section>
+  
+ 
+    
+
+</body>
+</html>
